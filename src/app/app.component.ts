@@ -18,23 +18,20 @@ export class AppComponent {
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     })
   };
-
-  body = { title: 'Angular POST Request Example' };
 
   myClickFunction(event) {
 
 
     alert('Button is clicked');
-    this.getTest();
+    this.requestTest();
  }
 
-
-   getTest(){
+   requestTest(){
      console.log('getTest');
-     this.http.post<any>(this.apiURL + '/TSPRoute', this.body, this.httpOptions)
+     this.http.post<any>(this.apiURL + '/TSPRoute', this.httpOptions)
      .subscribe(data => {
        console.log(data);
  });
