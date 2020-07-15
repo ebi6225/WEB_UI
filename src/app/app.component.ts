@@ -15,25 +15,19 @@ export class AppComponent {
 
   constructor(private http: HttpClient) { }
 
-  // Http Options
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  };
-
   myClickFunction(event) {
-
-
-    alert('Button is clicked');
     this.requestTest();
  }
 
    requestTest(){
      console.log('getTest');
-     this.http.post<any>(this.apiURL + '/TSPRoute', this.httpOptions)
-     .subscribe(data => {
+      this.http.post<any>(this.apiURL + '/TSPRoute', null)
+      .subscribe(data => {
        console.log(data);
+
+    // this.http.get<any>(this.apiURL + '/TSGetRoute')
+    //  .subscribe(data => {
+    //    console.log(data);
  });
     }
 
