@@ -21,20 +21,19 @@ export class AppComponent {
 
    requestTest(){
      console.log('getTest');
-      this.http.post<any>(this.apiURL + '/TSPRoute', null)
+     this.http.post<any>(this.apiURL + '/TSPRoute', null)
       .subscribe(data => {
        console.log(data);
-
+      });
     // this.http.get<any>(this.apiURL + '/TSGetRoute')
     //  .subscribe(data => {
     //    console.log(data);
- });
     }
 
     // Error handling
   handleError(error) {
     let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
+    if (error.error instanceof ErrorEvent) {
       // Get client-side error
       errorMessage = error.error.message;
     } else {
@@ -44,5 +43,4 @@ export class AppComponent {
     window.alert(errorMessage);
     return throwError(errorMessage);
  }
-
 }
