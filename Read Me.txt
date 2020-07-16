@@ -1,0 +1,6 @@
+for debug in visual studio code
+ng serve --o
+
+If it is new pull need to use following steps to be run in side directore
+1) npm update
+2) ng serve -o
