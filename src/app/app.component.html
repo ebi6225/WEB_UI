@@ -1,57 +1,93 @@
 
 
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Layout</title>
+	<style>
+		.head1 {
+			font-size:40px;
+			color:#009900;
+			font-weight:bold;
+		}
+		.head2 {
+			font-size:17px;
+			margin-left:10px;
+			margin-bottom:15px;
+		}
+		body {
+			margin: 0 auto;
+			background-position:center;
+			background-size: contain;
+		}
 
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
+		.menu {
+			position: sticky;
+			top: 0;
+			background-color: #009900;
+			padding:10px 0px 10px 0px;
+			color:white;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.menu a {
+			float: left;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 20px;
+		}
+		.menu-log {
+			right: auto;
+			float: right;
+		}
+		footer {
+			width: 100%;
+			bottom: 0px;
+			background-color: #000;
+			color: #fff;
+			position: absolute;
+			padding-top:20px;
+			padding-bottom:50px;
+			text-align:center;
+			font-size:30px;
+			font-weight:bold;
+		}
+		.body_sec {
+			margin-left:20px;
+		}
+	</style>
+</head>
 
-  .toolbar img {
-    margin: 0 16px;
-  }
+<body>
 
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
+	<!-- Header Section -->
+	<header>
+		<div class="head1">Ebrahim +60182100349</div>
+		<div class="head2">Sample Website Angular CLI 10</div>
+	</header>
 
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
-  }
+	<!-- Menu Navigation Bar -->
+	<div class="menu">
+		<a href="#home">HOME</a>
+		<a href="#news">NEWS</a>
+		<a href="#notification">NOTIFICATIONS</a>
+		<div class="menu-log">
+			<a href="#login">LOGIN</a>
+		</div>
+	</div>
 
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
+  <!-- <div class="content" role="main"></div> -->
 
+  <!-- Body section -->
+	<div class = "body_sec">
+		<section id="Content">
+			<h3>Content section</h3>
+		</section>
+	</div>
 
-</style>
-
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-
-  <h3>Welcome</h3>
-
-</div>
-
-<div class="content" role="main">
-
-  <button (click)="myClickFunction($event)">Click Me</button>
-
-  <footer>
-
-  </footer>
-</div>
+	<!-- Footer Section -->
+	<footer>Footer Section</footer>
+</body>
+</html>
