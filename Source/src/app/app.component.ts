@@ -10,25 +10,24 @@ import {  catchError } from 'rxjs/operators';
    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  name;
   apiURL = 'http://localhost:51928/CallAction';
 
   constructor(private http: HttpClient) { }
 
   myClickFunction(event) {
+    this.name = '';
     this.requestTest();
  }
 
    requestTest(){
-     console.log('getTest');
-     this.http.post<any>(this.apiURL + '/TSPRoute', null)
+
+    this.http.post<any>(this.apiURL + '/GetMachineName', null)
       .subscribe(data => {
-       console.log(data);
+        this.name = data;
       });
-    // this.http.get<any>(this.apiURL + '/TSGetRoute')
-    //  .subscribe(data => {
-    //    console.log(data);
     }
+
 
     // Error handling
   handleError(error) {
