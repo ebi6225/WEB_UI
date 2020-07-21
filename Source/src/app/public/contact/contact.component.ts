@@ -37,14 +37,16 @@ export class ContactComponent implements OnInit {
         this.emailModel.SenderMessage += ' [Sender Requested Promotional Offers!]';
       }
 
-      console.log(this.emailModel);
-      this.http.post(this.apiURL + 'email',
-        {
-          sender_email: this.emailModel.SenderEmail,
-          sender_name: this.emailModel.SenderName,
-          sender_phone: this.emailModel.SenderPhone,
-          sender_message: this.emailModel.SenderMessage,
-        }).subscribe(
+      var request =
+                {
+                  sender_email: this.emailModel.SenderEmail,
+                  sender_name: this.emailModel.SenderName,
+                  sender_phone: this.emailModel.SenderPhone,
+                  sender_message: this.emailModel.SenderMessage,
+                };
+
+      console.log(request);
+      this.http.post(this.apiURL + 'email', request).subscribe(
           response => console.log('Success!', response),
           error => this.errorMsg = error.statusText
         );
