@@ -50,7 +50,7 @@ export class ContactComponent implements OnInit {
         );
 
       if (this.errorMsg == '' || this.submitted) {
-        this.sendSMS();
+        //this.sendSMS();
         this.successMsg = 'Message sent successfully. Thanks you.';
         this.emailModel = new Email('Sender Name', 'Customer Email', 'Customer contact Number', 'Customer Message' , true);
       }
