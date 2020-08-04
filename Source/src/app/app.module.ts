@@ -11,6 +11,7 @@ import { HomeComponent } from './public/home/home.component';
 import { ContactComponent } from './public/contact/contact.component';
 import { NotFoundComponent } from './public/not-found/not-found.component';
 import { AboutComponent } from './public/about/about.component';
+import { LoginComponent } from './public/login/login.component';
 
 
 
@@ -20,7 +21,8 @@ import { AboutComponent } from './public/about/about.component';
     HomeComponent,
     ContactComponent,
     NotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
